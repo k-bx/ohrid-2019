@@ -1,0 +1,24 @@
+
+.reveal pre {
+  padding: 20px;
+  font-size: 0.75em;
+  color: #000;
+  background-color: #fff;
+}
+
+code { color: #0000CD }
+
+
+/* Left-align */
+
+.reveal .slides .title { text-align: left; } /* Title slide */
+.reveal .slide h1 { text-align: left; } /* H1 title slides */
+.reveal .slide h2 { text-align: left; } /* H2 titles */
+
+/* Text */
+section  { text-align: left; }
+
+/* NO EFFECT:
+ul { text-align: left; }
+nav { text-align: left; }
+*/
