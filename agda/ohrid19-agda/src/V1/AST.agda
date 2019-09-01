@@ -29,6 +29,7 @@ data Exp : Set where
   eGt    : (e e' : Exp)     → Exp
   eAnd   : (e e' : Exp)     → Exp
   eCond  : (e e' e'' : Exp) → Exp
+  eNeg   : (e : Exp)        → Exp
 
 {-# COMPILE GHC Exp = data Exp
   ( EInt

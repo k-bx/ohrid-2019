@@ -68,6 +68,11 @@ eval (eAnd e₁ e₂) = case (eval e₁ , eval e₂) of λ where
 eval (eCond e₁ e₂ e₃) = case (eval e₁) of λ where
   (just (boolV b)) → bIf b (eval e₂) (eval e₃)
   _ → nothing
+eval (eNeg e₁) = case (eval e₁) of λ where
+                   (just (intV x)) → {!!}
+                   (just (boolV true)) → just (boolV false)
+                   (just (boolV false)) → just (boolV true)
+                   nothing → nothing
 
 evalPrg : Program → Maybe ℤ
 evalPrg (program e) = case eval e of λ where

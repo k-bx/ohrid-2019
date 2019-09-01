@@ -48,6 +48,11 @@ mutual
     (t , e₂') ← inferExp e₂
     e₃' ← checkExp e₃ t
     return (t , eCond e₁' e₂' e₃')
+  inferExp (A.eNeg i) =
+    case inferExp i of λ where
+      (fail x) → fail x
+      (ok (bool , exp)) → return (( bool , eNeg exp ))
+      (ok (int , exp)) → fail (typeMismatch bool int λ ())
 
   -- Type checking.
   -- Calls inference and checks inferred type against given type.

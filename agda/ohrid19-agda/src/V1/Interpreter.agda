@@ -22,6 +22,9 @@ eval (eOp and e₁ e₂)  = case eval e₁ of λ where
 eval (eCond e₁ e₂ e₃) = case eval e₁ of λ where
                           true  → eval e₂
                           false → eval e₃
+eval (eNeg e₁) = case eval e₁ of λ where
+                          true → false
+                          false → true
 
 -- Execution of the program (main loop).
 

@@ -22,6 +22,7 @@ data Exp : Type → Set where
   eOp   : ∀{t t'} (op : Op t t') (e e' : Exp t) → Exp t'
   -- Conditionals:
   eCond : ∀{t} (e : Exp bool) (e' e'' : Exp t)  → Exp t
+  eNeg  : (e : Exp bool)                        → Exp bool
 
 -- For now, a program is just a final expression.
 
