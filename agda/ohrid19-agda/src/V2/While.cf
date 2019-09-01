@@ -22,6 +22,7 @@ terminator Decl "";
 -- [].  [Decl] ::=             ;
 -- (:). [Decl] ::= Decl [Decl] ;
 
+ENeg.   Exp5 ::= "!" Exp5; -- right-associative
 EId.    Exp4 ::= Ident;
 EInt.   Exp4 ::= Integer;
 EBool.  Exp4 ::= Boolean;

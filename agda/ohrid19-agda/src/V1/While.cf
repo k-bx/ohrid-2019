@@ -13,6 +13,7 @@
 
 Prg.    Program ::= "int" "main" "(" ")" "{" "printInt" Exp4 ";" "}";
 
+ENeg.   Exp5 ::= "!" Exp5; -- right-associative
 EInt.   Exp4 ::= Integer;
 EBool.  Exp4 ::= Boolean;
 

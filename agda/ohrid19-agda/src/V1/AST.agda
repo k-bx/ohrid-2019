@@ -38,6 +38,7 @@ data Exp : Set where
   | EGt
   | EAnd
   | ECond
+  | ENeg
   ) #-}
 
 record Program : Set where

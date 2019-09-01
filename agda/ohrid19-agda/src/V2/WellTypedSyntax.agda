@@ -32,6 +32,8 @@ data Exp (Γ : Cxt) : Type → Set where
   eCond : ∀{t} (e : Exp Γ bool) (e' e'' : Exp Γ t) → Exp Γ t
   -- Variables:
   eVar  : ∀{t}    (x : Var Γ t)                    → Exp Γ t
+  eNeg  : (e : Exp Γ bool)                         → Exp Γ bool
+
 -- Well-typed declarations (extending the context).
 
 data Decl (Γ : Cxt) (t : Type) : Set where
