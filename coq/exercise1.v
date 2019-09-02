@@ -4,9 +4,24 @@ Require Import Arith List Bool.
    0 to 1
    1 to 2
    any number larger than 2 to 0 *)
+Definition next3 (n : nat) : nat :=
+  match n with
+    | 0 => 1
+    | 1 => 2
+    | _ => 0
+  end.
+Check next3 1 = 2.
 
 (* Define a function sumf that takes f : nat -> nat and n : nat as arguments
   and returns f 0 + f 1 + ... + f n *)
+
+Fixpoint sumf_help (f : nat -> nat) (n : nat) (acc : nat) : nat :=
+  match n with
+    | 0 => f 0
+    | S n => sumf_help f n (acc + (f (S n)))
+  end.
+
+Definition sumf (f : nat -> nat) (n : nat) : nat := sumf_help f n 0.
 
 (* Define a function eiseinstein that takes as input a list of numbers
  (a_1 ... a_k) and returns as output the list
